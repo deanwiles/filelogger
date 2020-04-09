@@ -22,6 +22,9 @@ namespace SplitByLogLevel
             {
                 builder.AddConfiguration(configuration.GetSection("Logging"));
 
+                // Add console logging
+                builder.AddConsole();
+
                 // the "standard" provider which logs all messages with severity warning or above to 'warn+err.log' (see appsettings.json for configuration settings)
                 builder.AddFile(o => o.RootPath = AppContext.BaseDirectory);
 
